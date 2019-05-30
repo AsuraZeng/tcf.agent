@@ -156,9 +156,9 @@ else
   VERSION := $(shell grep "%define version " $(TCF_AGENT_DIR)/tcf/main/tcf-agent.spec | sed -e "s/%define version //")
 endif
 
-INSTALLROOT ?= /tmp
-INCLUDE = /usr/include
-SBIN = /usr/sbin
+INSTALLROOT ?= $(DESTDIR)/usr
+INCLUDE = /include
+SBIN = /sbin
 INIT = /etc/init.d
 
 HFILES = $(foreach dir,$(SRCDIRS),$(wildcard $(TCF_AGENT_DIR)/$(dir)/*.h))
